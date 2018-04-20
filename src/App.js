@@ -42,7 +42,10 @@ showRecentHandler = () => {
     const leadCampers = this.state.allTimeLeaders;
     const recentCampers = this.state.recentLeaders;
     const showAllTime = this.state.showAllTime;
-    
+    //let link = {`https://www.freecodecamp.org/${leader.username}`}
+    //const link = 'https://www.freecodecamp.com/'+ this.leadCampers;
+  
+
     let show = null;
 
     if(showAllTime === false){
@@ -61,7 +64,7 @@ showRecentHandler = () => {
         <tr key={leader.username}>
           <td>{index + 1}</td>
           <td><a href={`https://www.freecodecamp.org/${leader.username}`}>
-          <Image src={leader.img} className="imgHeight" /> {leader.username}
+          <img src={leader.img} className="imgHeight" /> {leader.username}
           </a></td>
           <td>{leader.recent}</td>
           <td>{leader.alltime}</td>
@@ -88,7 +91,7 @@ showRecentHandler = () => {
         <tr key={leader.username}>
           <td>{index + 1}</td>
           <td><a href={`https://www.freecodecamp.org/${leader.username}`}>
-          <Image src={leader.img} className="imgHeight" /> {leader.username}
+          <img src={leader.img} className="imgHeight" /> {leader.username}
           </a></td>
           <td>{leader.recent}</td>
           <td>{leader.alltime}</td>
@@ -102,6 +105,7 @@ showRecentHandler = () => {
 
     return (
       <div className="App container">
+        <h2>Leaderboard</h2>
         {show}
       </div>      
     );
@@ -111,59 +115,3 @@ showRecentHandler = () => {
 export default App;
 
 
- {/*
-  <ul>
-        {recentCampers.map(leader => 
-          <div key={leader.username}>
-          <li>{leader.username}</li>
-          <li>{leader.alltime}</li>
-          </div>
-        )}
-  </ul>
-  
-  
-  const {recentLeaders, allTimeLeaders} = this.state;
-  <Table bordered condensed hover className="colorBlack">
-        <thead>
-        <tr>
-          <th>#</th>
-          <th>Username</th>
-          <th>Last 30 Days</th>
-          <th>All Time Points</th>
-        </tr>
-      </thead>
-      <tbody>
-       {recentLeaders.map((row, index) => (
-         <tr key={row.username}>
-         <td>index + 1 </td>
-         <td><a href={`https://www.freecodecamp.org/${row.username}`}>
-         <Image src= {row.img} className='imgHeight' cirlcle/> {row.username}
-         </a></td>
-         <td>{row.recent}</td>
-         <td>{row.alltime}</td>  
-         </tr>
-      ) 
-      )}
-      </tbody>
-    </Table>*/}
-
-    {/*componentWillMount() {
-    axios.all([this.fetchRecentCampers(), this.fetchAllTimeCampers()])
-      .then(axios.spread((recentCampers, allTimeCampers) => {
-        this.setState({
-          recentCampers: recentCampers.data,
-          allTimeCampers: allTimeCampers.data
-        });
-      }));          
-  }
-  fetchRecentCampers() {
-    return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent');
-  }
-
-  fetchAllTimeCampers() {
-    return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime');
-  }
-
-  changeView(view) {
-    this.setState({ currentView: view });
-  }*/}
