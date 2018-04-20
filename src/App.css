@@ -26,12 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/*
 .colorBlack {
   color: black;
 }
-.colorBlack {
-  color: black;
-}
+*/
 .imgHeight {
   height: 50px;
   float: left;
@@ -41,8 +40,29 @@ h2 {
   background-color: green;
   margin-bottom: 0;
 }
-.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th,
- .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th,
-  .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th:hover {
+.underline {
+  font-style: italic;
+  font-weight: 900;
+  color:black;
+}
+.underline:hover {
   cursor: pointer;
 }
+.up {  
+  
+  
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+            10px 10px 15px rgba(0,0,0,0.5),
+            -2px -2px 30px rgba(0,0,0,0.2);
+  
+}
+.down {
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  /*
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px black;
+  */
+}
+

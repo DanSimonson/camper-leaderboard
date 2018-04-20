@@ -25,14 +25,16 @@ componentDidMount() {
   }); 
 }
 
-showAllTimeHandler = () => {
-  console.log('inside showAllTimeHander');
+showAllTimeHandler = (event) => {
+  document.body.classList.toggle('up');
+  document.body.classList.toggle('down');  
   this.setState ({
     showAllTime: true
   });
 }
-showRecentHandler = () => {
-  console.log('inside showRecentHander');
+showRecentHandler = (event) => {
+  document.body.classList.toggle('up');
+  document.body.classList.toggle('down');
   this.setState ({
     showAllTime: false
   });  
@@ -55,8 +57,8 @@ showRecentHandler = () => {
         <tr>
           <th>#</th>
           <th>Camper Name</th>
-          <th onClick={this.showRecentHandler}>Points in 30 Days &nbsp;&nbsp;&nbsp;{showAllTime === false && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
-          <th onClick={this.showAllTimeHandler}>All Time Points &nbsp;&nbsp;&nbsp; {showAllTime && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
+          <th className='underline down' onClick={this.showRecentHandler}>Points in 30 Days &nbsp;&nbsp;&nbsp;{showAllTime === false && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
+          <th className='underline up' onClick={this.showAllTimeHandler}>All Time Points &nbsp;&nbsp;&nbsp; {showAllTime && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
         </tr>
       </thead>
       <tbody>
@@ -82,8 +84,8 @@ showRecentHandler = () => {
         <tr>
           <th>#</th>
           <th>Camper Name</th>
-          <th onClick={this.showRecentHandler}>Points in 30 Days &nbsp;&nbsp;&nbsp;{showAllTime === false && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
-          <th onClick={this.showAllTimeHandler}>All Time Points &nbsp;&nbsp;&nbsp;{showAllTime && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
+          <th className='underline up' onClick={this.showRecentHandler}>Points in 30 Days &nbsp;&nbsp;&nbsp;{showAllTime === false && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
+          <th className='underline down' onClick={this.showAllTimeHandler}>All Time Points &nbsp;&nbsp;&nbsp;{showAllTime && (<i class="fas fa-angle-down fa-3x"></i>)}</th>
         </tr>
       </thead>
       <tbody>
